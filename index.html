@@ -96,7 +96,7 @@
             min-height: 25px;
         }
 
-        /* Johnny Sins Picture Section */
+        /* Picture Section */
         .picture-surprise {
             display: none;
             position: fixed;
@@ -159,7 +159,7 @@
             box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
         }
 
-        /* 4K Aesthetic Success Animation */
+        /* Success Animation */
         .success-surprise {
             display: none;
             position: fixed;
@@ -170,18 +170,6 @@
             background: radial-gradient(circle at center, #000428, #004e92);
             z-index: 1000;
             overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .success-content {
@@ -219,49 +207,16 @@
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
-        .celebration-gif {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin-bottom: 30px;
-            border: 5px solid transparent;
-            background: linear-gradient(45deg, #00ff00, #00ffff, #0088ff) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: rotate 4s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .stars {
+        .particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
-            animation: twinkle 3s infinite;
+            animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-
-        .firework {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            animation: explode 2s ease-out infinite;
-        }
-
-        @keyframes explode {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(30); opacity: 0; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
     </style>
 </head>
@@ -283,7 +238,7 @@
     <!-- Johnny Sins Picture Surprise -->
     <div class="picture-surprise" id="pictureSurprise">
         <div class="picture-container">
-            <img src="https://i.imgur.com/3Q7Z4Jt.jpeg" alt="Johnny Sins" class="johnny-picture">
+            <img src="https://share.google.com/images/VDj0w64M97Ju4JeD7" alt="Johnny Sins" class="johnny-picture" onerror="replaceWithLocalImage(this)">
             <div class="picture-text">
                 "Apny Galat Password Lagaya h. Ab Apko Mery Sath Room Mai Chlna Hoga" 😈
             </div>
@@ -291,12 +246,11 @@
         </div>
     </div>
 
-    <!-- 4K Aesthetic Success Animation -->
+    <!-- Success Animation -->
     <div class="success-surprise" id="successSurprise">
         <div class="success-content">
             <div class="congrats-text">Mubarak Ho! 🎉</div>
             <div class="sub-text">Ap Jhonny Sins Sy Bch Gaye! 🏆</div>
-            <div class="celebration-gif"></div>
         </div>
     </div>
 
@@ -313,7 +267,7 @@
             const correctPassword = 'wraith';
 
             if (email === correctEmail && password === correctPassword) {
-                // Correct credentials - show 4K aesthetic animation
+                // Correct credentials - show success
                 message.textContent = '✅ Access Granted!';
                 message.style.color = '#00ff00';
                 showSuccessAnimation();
@@ -348,10 +302,8 @@
             loginContainer.style.display = 'none';
             successSurprise.style.display = 'block';
             
-            // Create 4K aesthetic effects
+            // Create particles
             createParticles();
-            createStars();
-            createFireworks();
             playVictorySound();
         }
 
@@ -371,40 +323,6 @@
                 particle.style.opacity = Math.random() * 0.7 + 0.3;
                 successSurprise.appendChild(particle);
             }
-        }
-
-        function createStars() {
-            const successSurprise = document.getElementById('successSurprise');
-            
-            for (let i = 0; i < 200; i++) {
-                const star = document.createElement('div');
-                star.className = 'stars';
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.top = Math.random() * 100 + 'vh';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
-                successSurprise.appendChild(star);
-            }
-        }
-
-        function createFireworks() {
-            const successSurprise = document.getElementById('successSurprise');
-            
-            setInterval(() => {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
-                firework.style.left = Math.random() * 100 + 'vw';
-                firework.style.top = Math.random() * 100 + 'vh';
-                firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                successSurprise.appendChild(firework);
-                
-                setTimeout(() => {
-                    if (firework.parentNode) {
-                        firework.remove();
-                    }
-                }, 2000);
-            }, 300);
         }
 
         function playVictorySound() {
@@ -437,6 +355,13 @@
             } catch (error) {
                 console.log('Audio not supported');
             }
+        }
+
+        // If Google Photos URL doesn't work, use alternative
+        function replaceWithLocalImage(img) {
+            console.log('Google Photos URL failed, using alternative image...');
+            // You can replace this with any public Johnny Sins image URL
+            img.src = 'https://i.imgur.com/3Q7Z4Jt.jpeg';
         }
 
         // Enter key support
