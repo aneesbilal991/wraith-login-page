@@ -1,9 +1,6 @@
-cd ~/wraith-login-project
+# 🎪 Wraith Developer - Interactive Login Portal
 
-cat > README.md << 'README'
-# 🎪 Wraith Developer - Cute Login Portal
-
-A beautiful and cute-themed interactive login page with surprise animations!
+A fun and interactive login page with surprise animations and themed experiences!
 
 ## 🌐 Live Demo
 **[Visit Live Website](https://aneesbilal991.github.io/wraith-login-page/)**
@@ -12,25 +9,25 @@ A beautiful and cute-themed interactive login page with surprise animations!
 
 ### 🎨 Beautiful Design
 - 💖 Pink and purple gradient theme
-- 🎀 Cute animations and floating effects
-- 🌈 Glass morphism design with blur effects
+- 🎀 Cute floating animations
+- 🌈 Glass morphism effects
 - 📱 Fully responsive design
 
 ### 🎮 Interactive Experience
-- 🏃‍♂️ **Wrong Password**: Cute surprise theme with picture
-- 🎉 **Correct Password**: Beautiful success animation
+- ❌ **Wrong Password**: Johnny Sins picture with funny message
+- ✅ **Correct Password**: Celebration animation with success message
 - ⌨️ **Keyboard Support**: Enter key to submit
-- 💫 **Smooth Animations**: Float and bounce effects
+- 💫 **Smooth Animations**: Professional transitions
 
-### 🛡️ Smart Features
+### 🎯 Smart Features
 - 🔒 Secure login validation
-- ❤️ Heart animations for wrong passwords
-- ✨ Particle effects for success
-- 🎵 Sound effects on success
+- 🖼️ Local image support
+- 🎵 Sound effects
+- ✨ Confetti animations
 
 ## 🔑 Test Credentials
 
-### ✅ Correct Login (Beautiful Animation):
+### ✅ Correct Login (Celebration Animation):
 ```bash
 Email: wraithdeveloper@gmail.com
 Password: wraith
