@@ -1,46 +1,25 @@
-# 🔐 Wraith Developer - Project Portfolio
+# 🎪 Wraith Developer Login Portal
 
-## 🎯 Live Projects Showcase
+A fun and interactive login page with amazing surprise animations and humor!
 
-### 1. 🎪 Interactive Login Portal  
-**🌐 Live Demo:** https://aneesbilal991.github.io/wraith-login-page/
+## 🌐 Live Demo
+**[Click here to experience the magic!](https://aneesbilal991.github.io/wraith-login-page/)**
 
-**✨ Features:**
-- 🏃‍♂️ Moving login button for wrong passwords
-- 📸 Johnny Sins surprise with funny message
-- 🎉 4K aesthetic animation for correct login
-- 🎨 Professional UI/UX design
-- 🌈 Rainbow effects & animations
-- 💫 Confetti and particle effects
+## ✨ Features
 
-**🔑 Test Credentials:**
-- **✅ Correct Login:** `wraithdeveloper@gmail.com` / `wraith`
-- **❌ Wrong Login:** Any other credentials for fun surprise
+### 🎯 Interactive Login Experience
+- 🏃‍♂️ **Moving Button** - Login button runs away on wrong credentials
+- 📸 **Johnny Sins Surprise** - Funny picture with message for wrong passwords
+- 🎉 **4K Aesthetic Animation** - Beautiful particle effects for correct login
+- 🎨 **Professional UI/UX** - Cyber-themed design with gradients
+- 🌈 **Smooth Animations** - Fade-in and slide-in effects
 
-**🎮 How to Experience:**
-1. Visit the live website
-2. Try wrong password first for funny surprise
-3. Use correct credentials for amazing 4K animation
-4. Enjoy the interactive experience!
+### 🎮 User Experience
+- ✅ **Correct Login**: Amazing 4K celebration animation
+- ❌ **Wrong Login**: Johnny Sins picture with humorous message
+- ⌨️ **Keyboard Support**: Enter key to submit login
+- 📱 **Responsive Design**: Works on all devices
 
----
+## 🔑 Test Credentials
 
-### 2. 🏥 Medical Diagnosis System
-**💻 Python Terminal Application**
-
-**✨ Features:**
-- 🔍 Complete symptom analysis database
-- 🈷️ Urdu/English bilingual support  
-- 🎨 Colorful terminal interface with animations
-- 📄 Automated medical reports generation
-- 👨‍⚕️ Doctor: "Dr. Wraith Developer"
-- 💊 Medicine recommendations & precautions
-
-**🚀 Usage:**
-```bash
-# Download and run
-python3 medical_system.py
-
-# Follow the interactive menu
-# Enter symptoms in English or Urdu
-# Get instant diagnosis and treatment
+### ✅ Correct Login (Amazing Animation):
