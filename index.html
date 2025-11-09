@@ -1,0 +1,293 @@
+kcd ~/wraith-login-project
+
+# Complete setup script
+cat > setup_project.sh << 'SCRIPT'
+#!/bin/bash
+
+echo "🚀 Creating Complete Project..."
+echo "=============================="
+
+# Create folders
+mkdir -p images
+
+# Download sample picture
+echo "📥 Downloading picture..."
+cd images
+wget -q -O johnny.jpg "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop"
+cd ..
+
+# Create HTML file
+echo "📄 Creating HTML file..."
+cat > index.html << 'HTML'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wraith Developer Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 420px;
+            border: 3px solid #ff85a2;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            color: #ff6b6b;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 2px solid #ff85a2;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+        }
+
+        #loginBtn {
+            background: linear-gradient(45deg, #ff6b6b, #ff85a2);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        #loginBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .message {
+            color: #ff6b6b;
+            margin-top: 15px;
+            font-weight: bold;
+            min-height: 25px;
+        }
+
+        .wrong-password-theme {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B0000 0%, #2F0000 100%);
+            z-index: 1000;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .wrong-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+            border: 3px solid #ff0000;
+        }
+
+        .johnny-picture {
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 5px solid #ff0000;
+            object-fit: cover;
+        }
+
+        .wrong-text {
+            color: #ff6b6b;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .close-btn {
+            background: linear-gradient(45deg, #ff0000, #8B0000);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .success-theme {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            z-index: 1000;
+        }
+
+        .success-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .congrats-text {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sub-text {
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>💖 WRATH DEVELOPER</h1>
+        <div class="input-group">
+            <label for="email">📧 Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="input-group">
+            <label for="password">🔑 Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button id="loginBtn">🚀 LOGIN</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <div class="wrong-password-theme" id="wrongTheme">
+        <div class="wrong-container">
+            <img src="images/johnny.jpg" alt="Johnny Sins" class="johnny-picture">
+            <div class="wrong-text">
+                "Ap ny password galat milaya h. Ab apko mery Sath room mai Chlna pry ga" 😈
+            </div>
+            <button class="close-btn" onclick="closeWrongTheme()">Close</button>
+        </div>
+    </div>
+
+    <div class="success-theme" id="successTheme">
+        <div class="success-content">
+            <div class="congrats-text">🎉 Mubarak Ho! 🎉</div>
+            <div class="sub-text">Ap Johnny sy Bch Gaye! 🏆</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const password = document.getElementById('password').value.trim();
+            const message = document.getElementById('message');
+
+            const correctEmail = 'wraithdeveloper@gmail.com';
+            const correctPassword = 'wraith';
+
+            if (email === correctEmail && password === correctPassword) {
+                message.textContent = '✅ Access Granted! Welcome!';
+                message.style.color = '#00b09b';
+                showSuccessTheme();
+            } else {
+                message.textContent = '❌ Wrong password! Try again!';
+                message.style.color = '#ff6b6b';
+                showWrongTheme();
+            }
+        });
+
+        function showWrongTheme() {
+            document.getElementById('wrongTheme').style.display = 'block';
+        }
+
+        function closeWrongTheme() {
+            document.getElementById('wrongTheme').style.display = 'none';
+        }
+
+        function showSuccessTheme() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('successTheme').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+HTML
+
+# Create README file
+echo "📖 Creating README file..."
+cat > README.md << 'README'
+# Wraith Developer Login Portal
+Beautiful login page with surprise themes!
+README
+
+echo "✅ Project created successfully!"
+echo "📁 Location: $(pwd)"
+echo "📄 Files created:"
+ls -la
+ls -la images/
+SCRIPT
+
+chmod +x setup_project.sh
+./setup_project.sh
