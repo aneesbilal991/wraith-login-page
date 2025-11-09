@@ -41,14 +41,6 @@
             font-weight: bold;
         }
 
-        .developer-text {
-            color: #ff00ff;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px #ff00ff;
-            font-weight: bold;
-        }
-
         .input-group {
             margin-bottom: 25px;
             text-align: left;
@@ -59,7 +51,6 @@
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
-            text-shadow: 0 0 10px #00ff00;
         }
 
         input {
@@ -68,9 +59,9 @@
             border: none;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.3);
-            font-size: 16px;
             color: white;
             border: 2px solid #00ffff;
+            font-size: 16px;
         }
 
         input:focus {
@@ -91,7 +82,6 @@
             margin-top: 20px;
             width: 100%;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         #loginBtn:hover {
@@ -106,81 +96,178 @@
             min-height: 25px;
         }
 
-        /* Surprise Elements */
-        .surprise {
+        /* Johnny Sins Picture Section */
+        .picture-surprise {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff);
-            background-size: 600% 600%;
-            animation: rainbow 3s ease infinite;
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
+            text-align: center;
+            padding: 20px;
         }
 
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .picture-container {
+            background: linear-gradient(135deg, #ff0000, #800000);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 0 60px rgba(255, 0, 0, 0.7);
+            border: 3px solid #ff4444;
         }
 
-        .confetti {
+        .johnny-picture {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 5px solid #ff0000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .picture-text {
+            color: #ffffff;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            background: linear-gradient(45deg, #ff0000, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px;
+        }
+
+        .close-btn {
+            background: linear-gradient(45deg, #ff0000, #cc0000);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+        }
+
+        /* 4K Aesthetic Success Animation */
+        .success-surprise {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #000428, #004e92);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .particle {
             position: absolute;
-            width: 12px;
-            height: 12px;
-            background: #ff0000;
-            animation: fall linear infinite;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes fall {
-            to { transform: translateY(100vh) rotate(360deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
-        .success-message {
+        .success-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            font-size: 4em;
             text-align: center;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-            animation: bounce 0.8s infinite alternate;
-            font-weight: bold;
+            color: white;
+            z-index: 1001;
         }
 
-        @keyframes bounce {
-            from { transform: translate(-50%, -50%) scale(1); }
-            to { transform: translate(-50%, -50%) scale(1.1); }
+        .congrats-text {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00ff00, #00ff88, #00ffff, #0088ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+            to { text-shadow: 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff; }
+        }
+
+        .sub-text {
+            font-size: 2em;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .celebration-gif {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            border: 5px solid transparent;
+            background: linear-gradient(45deg, #00ff00, #00ffff, #0088ff) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stars {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
 
         .firework {
             position: absolute;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
-            animation: explode 1.5s ease-out infinite;
+            animation: explode 2s ease-out infinite;
         }
 
         @keyframes explode {
             0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(25); opacity: 0; }
-        }
-
-        /* Moving button styles */
-        .btn-moving {
-            position: absolute !important;
-            transition: all 0.4s ease !important;
+            100% { transform: scale(30); opacity: 0; }
         }
     </style>
 </head>
 <body>
     <div class="login-container" id="loginContainer">
         <h1>🔐 WRATH DEVELOPER</h1>
-        <div class="developer-text">Secure Access Portal</div>
         <div class="input-group">
             <label for="email">📧 Email:</label>
             <input type="email" id="email" placeholder="Enter email">
@@ -193,154 +280,138 @@
         <div class="message" id="message"></div>
     </div>
 
-    <!-- Surprise Section -->
-    <div class="surprise" id="surprise">
-        <div class="success-message">
-            🎉 WELCOME WRATH! 🎉<br>
-            <span style="font-size: 0.4em;">YOU ARE AWESOME! 💫</span>
+    <!-- Johnny Sins Picture Surprise -->
+    <div class="picture-surprise" id="pictureSurprise">
+        <div class="picture-container">
+            <img src="https://i.imgur.com/3Q7Z4Jt.jpeg" alt="Johnny Sins" class="johnny-picture">
+            <div class="picture-text">
+                "Apny Galat Password Lagaya h. Ab Apko Mery Sath Room Mai Chlna Hoga" 😈
+            </div>
+            <button class="close-btn" onclick="closePicture()">Close</button>
+        </div>
+    </div>
+
+    <!-- 4K Aesthetic Success Animation -->
+    <div class="success-surprise" id="successSurprise">
+        <div class="success-content">
+            <div class="congrats-text">Mubarak Ho! 🎉</div>
+            <div class="sub-text">Ap Jhonny Sins Sy Bch Gaye! 🏆</div>
+            <div class="celebration-gif"></div>
         </div>
     </div>
 
     <script>
         let moveCount = 0;
-        const maxMoves = 6;
-        let isProcessing = false;
+        const maxMoves = 5;
 
-        // Login button click handler
         document.getElementById('loginBtn').addEventListener('click', function() {
-            if (isProcessing) return;
-            isProcessing = true;
-            
-            setTimeout(() => {
-                tryToLogin();
-                isProcessing = false;
-            }, 100);
-        });
-
-        function tryToLogin() {
             const email = document.getElementById('email').value.trim().toLowerCase();
             const password = document.getElementById('password').value.trim();
             const message = document.getElementById('message');
-            const loginBtn = document.getElementById('loginBtn');
 
-            // Correct credentials
             const correctEmail = 'wraithdeveloper@gmail.com';
             const correctPassword = 'wraith';
 
-            console.log('Input:', email, password); // Debug
-
-            // Check if credentials are correct
             if (email === correctEmail && password === correctPassword) {
-                // CORRECT CREDENTIALS - Show surprise immediately
-                console.log('Correct credentials - showing surprise');
-                message.textContent = '✅ Access Granted! Welcome Master Wraith!';
+                // Correct credentials - show 4K aesthetic animation
+                message.textContent = '✅ Access Granted!';
                 message.style.color = '#00ff00';
-                showSurprise();
+                showSuccessAnimation();
             } else {
-                // WRONG CREDENTIALS - Move button
-                console.log('Wrong credentials - moving button');
+                // Wrong credentials - show Johnny Sins picture
                 moveCount++;
-                moveButton();
-                message.textContent = `❌ Wrong credentials! (${moveCount}/${maxMoves})`;
+                message.textContent = `❌ Login Successful... but wait! (${moveCount}/${maxMoves})`;
                 message.style.color = '#ff6b6b';
+                showPictureSurprise();
                 
                 if (moveCount >= maxMoves) {
-                    message.textContent = '😅 Okay! Stop trying!';
-                    setTimeout(resetButton, 1000);
+                    message.textContent = '😂 Bas kar bhai!';
+                    moveCount = 0;
                 }
+            }
+        });
+
+        function showPictureSurprise() {
+            const pictureSurprise = document.getElementById('pictureSurprise');
+            pictureSurprise.style.display = 'block';
+        }
+
+        function closePicture() {
+            const pictureSurprise = document.getElementById('pictureSurprise');
+            pictureSurprise.style.display = 'none';
+        }
+
+        function showSuccessAnimation() {
+            const successSurprise = document.getElementById('successSurprise');
+            const loginContainer = document.getElementById('loginContainer');
+            
+            loginContainer.style.display = 'none';
+            successSurprise.style.display = 'block';
+            
+            // Create 4K aesthetic effects
+            createParticles();
+            createStars();
+            createFireworks();
+            playVictorySound();
+        }
+
+        function createParticles() {
+            const successSurprise = document.getElementById('successSurprise');
+            const colors = ['#00ff00', '#00ffff', '#0088ff', '#ffd700', '#ff6b6b'];
+            
+            for (let i = 0; i < 150; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.opacity = Math.random() * 0.7 + 0.3;
+                successSurprise.appendChild(particle);
             }
         }
 
-        function moveButton() {
-            const loginBtn = document.getElementById('loginBtn');
-            const container = document.getElementById('loginContainer');
+        function createStars() {
+            const successSurprise = document.getElementById('successSurprise');
             
-            // Calculate available space
-            const maxX = container.offsetWidth - loginBtn.offsetWidth - 30;
-            const maxY = container.offsetHeight - loginBtn.offsetHeight - 30;
-            
-            // Random position
-            const randomX = Math.max(15, Math.floor(Math.random() * maxX));
-            const randomY = Math.max(15, Math.floor(Math.random() * maxY));
-            
-            // Move button
-            loginBtn.classList.add('btn-moving');
-            loginBtn.style.left = randomX + 'px';
-            loginBtn.style.top = randomY + 'px';
-            
-            // Change button text
-            const funnyTexts = ['Nope!', 'Try Again!', 'Wrong!', 'Oops!', 'Missed!', 'Catch Me!'];
-            loginBtn.textContent = funnyTexts[Math.floor(Math.random() * funnyTexts.length)];
-        }
-
-        function resetButton() {
-            const loginBtn = document.getElementById('loginBtn');
-            loginBtn.classList.remove('btn-moving');
-            loginBtn.style.position = 'static';
-            loginBtn.style.left = 'auto';
-            loginBtn.style.top = 'auto';
-            loginBtn.textContent = '🚀 LOGIN';
-            moveCount = 0;
-        }
-
-        function showSurprise() {
-            console.log('Showing surprise...');
-            const surprise = document.getElementById('surprise');
-            const loginContainer = document.getElementById('loginContainer');
-            
-            // Hide login container immediately
-            loginContainer.style.display = 'none';
-            
-            // Show surprise immediately
-            surprise.style.display = 'block';
-            
-            // Create effects
-            createConfetti();
-            createFireworks();
-            playSuccessSound();
-        }
-
-        function createConfetti() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-            const surprise = document.getElementById('surprise');
-            
-            for (let i = 0; i < 120; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                confetti.style.animationDelay = Math.random() * 2 + 's';
-                confetti.style.width = (Math.random() * 8 + 6) + 'px';
-                confetti.style.height = confetti.style.width;
-                surprise.appendChild(confetti);
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'stars';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                successSurprise.appendChild(star);
             }
         }
 
         function createFireworks() {
-            const surprise = document.getElementById('surprise');
+            const successSurprise = document.getElementById('successSurprise');
             
-            const fireworkInterval = setInterval(() => {
+            setInterval(() => {
                 const firework = document.createElement('div');
                 firework.className = 'firework';
                 firework.style.left = Math.random() * 100 + 'vw';
                 firework.style.top = Math.random() * 100 + 'vh';
                 firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                surprise.appendChild(firework);
+                successSurprise.appendChild(firework);
                 
                 setTimeout(() => {
                     if (firework.parentNode) {
                         firework.remove();
                     }
-                }, 1500);
-            }, 200);
+                }, 2000);
+            }, 300);
         }
 
-        function playSuccessSound() {
+        function playVictorySound() {
             try {
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 
-                const playNote = (frequency, duration) => {
+                const playNote = (frequency, duration, type = 'sine') => {
                     const oscillator = audioContext.createOscillator();
                     const gainNode = audioContext.createGain();
                     
@@ -348,7 +419,7 @@
                     gainNode.connect(audioContext.destination);
                     
                     oscillator.frequency.value = frequency;
-                    oscillator.type = 'sine';
+                    oscillator.type = type;
                     
                     gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
                     gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
@@ -357,10 +428,11 @@
                     oscillator.stop(audioContext.currentTime + duration);
                 };
                 
-                // Play success melody
-                playNote(523.25, 0.1); // C5
-                setTimeout(() => playNote(659.25, 0.1), 100); // E5
-                setTimeout(() => playNote(783.99, 0.2), 200); // G5
+                // Victory melody
+                playNote(523.25, 0.2); // C5
+                setTimeout(() => playNote(659.25, 0.2), 200); // E5
+                setTimeout(() => playNote(783.99, 0.3), 400); // G5
+                setTimeout(() => playNote(1046.50, 0.4), 600); // C6
                 
             } catch (error) {
                 console.log('Audio not supported');
@@ -371,22 +443,6 @@
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 document.getElementById('loginBtn').click();
-            }
-        });
-
-        // Prevent button from moving on hover when correct credentials are entered
-        document.getElementById('loginBtn').addEventListener('mouseover', function() {
-            const email = document.getElementById('email').value.trim().toLowerCase();
-            const password = document.getElementById('password').value.trim();
-            
-            const correctEmail = 'wraithdeveloper@gmail.com';
-            const correctPassword = 'wraith';
-            
-            // Only move if credentials are wrong AND we haven't reached max moves
-            if (email !== correctEmail || password !== correctPassword) {
-                if (moveCount > 0 && moveCount < maxMoves) {
-                    moveButton();
-                }
             }
         });
     </script>
